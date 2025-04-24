@@ -704,7 +704,7 @@ body {
 
 .video-section.slide {
   height: 100vh;
-  background: #222;
+  background: #fff;
   color: white;
   display: flex;
   align-items: center;
