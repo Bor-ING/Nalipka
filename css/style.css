@@ -7,6 +7,10 @@ body {
   cursor: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .montserrat {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -689,3 +693,69 @@ body {
 .button-custom {
   cursor: url('svg/objects.svg') 16 16, pointer;
 }
+
+body {
+  margin: 0;
+  cursor: default;
+  height: 100vh;
+  background: #111;
+  overflow: hidden;
+}
+
+.video-section.slide {
+  height: 100vh;
+  background: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+}
+
+.blob-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 140px;
+  background: #E86221;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.2s ease, transform 0.1s ease-out;
+  opacity: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  filter: blur(1px);
+  animation: blobWobble 4s infinite ease-in-out;
+}
+
+.blob-text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  user-select: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes blobWobble {
+  0%, 100% {
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  33% {
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  66% {
+    border-radius: 40% 60% 45% 55% / 60% 50% 50% 40%;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+

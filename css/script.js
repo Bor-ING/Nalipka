@@ -80,3 +80,22 @@ document.addEventListener('mousemove', (e) => {
     }
   });
 });
+
+
+
+const blob = document.querySelector('.blob-cursor');
+const section = document.querySelector('.video-section.slide');
+
+document.addEventListener('mousemove', (e) => {
+  blob.style.top = `${e.clientY}px`;
+  blob.style.left = `${e.clientX}px`;
+});
+
+section.addEventListener('mouseenter', () => {
+  blob.style.opacity = 1;
+  // Видаляємо будь-яке втручання в курсор через JS — все робимо в CSS
+});
+
+section.addEventListener('mouseleave', () => {
+  blob.style.opacity = 0;
+});
